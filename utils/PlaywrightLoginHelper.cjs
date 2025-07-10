@@ -1,9 +1,10 @@
-import { chromium } from 'playwright';
-import { anonymizeProxy, closeAnonymizedProxy } from 'proxy-chain';
-import { stripHtml } from 'string-strip-html'
+const { chromium } = require('playwright');
+const { anonymizeProxy, closeAnonymizedProxy } = require('proxy-chain');
+const { stripHtml } = require('string-strip-html');
+const axios = require('axios'); // axios typically works with require and import
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-export async function loginWithPlaywright({
+module.exports = async function loginWithPlaywright({
   proxy,
   email,
   password,
@@ -135,7 +136,7 @@ else {
     console.log("fail keys ", module.extra_data.fail_key);
     console.log("retry keys ", module.extra_data.retry_key);
 
-    const cleanText = stripHtml(content).result  // You can also use regex if you prefer
+    const cleanText = stripHtml(content).result
       .replace(/\s+/g, ' ')                      // Normalize whitespace
       .trim();
 
@@ -255,7 +256,7 @@ async function handleRecaptcha(page) {
 
     console.log('[*] Solving CAPTCHA via 2Captcha...');
     const token = await solveRecaptchaToken({ siteKey, url: page.url() });
-    
+
     // Inject into textarea
     await page.evaluate(token => {
       const textarea = document.createElement('textarea');

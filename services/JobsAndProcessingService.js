@@ -10,7 +10,7 @@ const AppError = require('../utils/AppError');
 const httpClient = require('../utils/HttpClient');
 const captchaService = require('./CaptchaService');
 const cheerio = require('cheerio');
-const { PlaywrightLoginHelper, loginWithPlaywright } = require('../utils/PlaywrightLoginHelper');
+const { loginWithPlaywright } = require('../utils/PlaywrightLoginHelper.cjs');
 
 class JobsAndProcessingService {
     static MAX_RETRIES = parseInt(process.env.JOB_MAX_RETRIES || 20, 10);
