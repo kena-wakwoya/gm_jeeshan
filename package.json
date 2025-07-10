@@ -31,7 +31,8 @@
     "playwright": "^1.53.1",
     "proxy-chain": "^2.5.9",
     "sequelize": "^6.37.7",
-    "string-strip-html": "^13.4.12"
+    "string-strip-html": "^13.4.12",
+    "striptags": "^3.2.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
