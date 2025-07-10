@@ -10,7 +10,7 @@ const AppError = require('../utils/AppError');
 const httpClient = require('../utils/HttpClient');
 const captchaService = require('./CaptchaService');
 const cheerio = require('cheerio');
-const { loginWithPlaywright } = require('../utils/PlaywrightLoginHelper.cjs');
+const  loginWithPlaywright  = require('./../utils/PlaywrightLoginHelper.cjs');
 
 class JobsAndProcessingService {
     static MAX_RETRIES = parseInt(process.env.JOB_MAX_RETRIES || 20, 10);
@@ -121,7 +121,7 @@ class JobsAndProcessingService {
                     module
                 });
 
-                console.log('[Playwright Result]', result);
+                // console.log('[Playwright Result]', result);
 
 
                 if (!result || result.status === 'error') {

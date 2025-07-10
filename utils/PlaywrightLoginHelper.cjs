@@ -1,6 +1,6 @@
 const { chromium } = require('playwright');
 const { anonymizeProxy, closeAnonymizedProxy } = require('proxy-chain');
-const { stripHtml } = require('string-strip-html');
+const striptags = require('striptags');
 const axios = require('axios'); // axios typically works with require and import
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -136,7 +136,7 @@ else {
     console.log("fail keys ", module.extra_data.fail_key);
     console.log("retry keys ", module.extra_data.retry_key);
 
-    const cleanText = stripHtml(content).result
+    const cleanText = striptags(content)
       .replace(/\s+/g, ' ')                      // Normalize whitespace
       .trim();
 

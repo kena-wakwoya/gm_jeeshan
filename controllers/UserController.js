@@ -22,7 +22,7 @@ const parseInputToArray = (input) => {
 const userController = {
    
     async register(req, res, next) {
-        const { first_name, last_name, username, email, password } = req.body;
+        const { first_name, last_name, username, email, password } = req.body.data;
         if (!first_name || !last_name || !username || !email || !password) {
             return next(new AppError('All fields are required.', 400));
         }
