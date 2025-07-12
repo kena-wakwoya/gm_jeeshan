@@ -6,17 +6,52 @@ const fs = require('fs/promises');
 const JobsAndProcessingService = require('../services/JobsAndProcessingService');
 
 // Helper to parse file content or textarea input
+const parseProxyInputToArray = (input) => {
+    if (!input) return [];
+
+    // Normalize newlines
+    let processedInput = input.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
+
+    // Proxy patterns:
+    const hostPortPattern = /^([a-zA-Z0-9.-]+):(\d{2,5})$/;
+    const hostPortUserPassPattern = /^([a-zA-Z0-9.-]+):(\d{2,5}):([^:\s]+):([^:\s]+)$/;
+
+    // Split by comma or newline
+    const isCSV = processedInput.indexOf('\n') === -1 && processedInput.indexOf(',') !== -1;
+    const parts = isCSV
+        ? processedInput.split(',')
+        : processedInput.split('\n');
+
+    // Trim and filter valid proxies
+    return parts
+        .map(item => item.trim())
+        .filter(item => 
+            item !== "" && 
+            (hostPortPattern.test(item) || hostPortUserPassPattern.test(item))
+        );
+};
+
 const parseInputToArray = (input) => {
     if (!input) return [];
 
+    // Normalize newlines
     let processedInput = input.replace(/\r\n/g, '\n').replace(/\r/g, '\n');
 
-    if (processedInput.indexOf('\n') === -1 && processedInput.indexOf(',') !== -1) {
-        return processedInput.split(',').map(item => item.trim()).filter(item => item !== "");
-    } else {
-        return processedInput.split('\n').map(item => item.trim()).filter(item => item !== "");
-    }
+    // Define regex for email:password pattern
+    const emailPasswordPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+:[^\s]+$/;
+
+    // Split by comma or newline depending on input format
+    const isCSV = processedInput.indexOf('\n') === -1 && processedInput.indexOf(',') !== -1;
+    const parts = isCSV
+        ? processedInput.split(',') 
+        : processedInput.split('\n');
+
+    // Trim, filter out empty, and match pattern
+    return parts
+        .map(item => item.trim())
+        .filter(item => item !== "" && emailPasswordPattern.test(item));
 };
+
 
 
 const userController = {
@@ -121,8 +156,9 @@ const userController = {
             }
             const requesting_user = req.user.id;
             const parsedCombo = parseInputToArray(combo_text);
-            const parsedProxy = parseInputToArray(proxy_text);
+            const parsedProxy = parseProxyInputToArray(proxy_text);
 
+            // return;
             // Proceed to create job
             // await userService.processCombosAndProxies(parsedComobo, parsedProxy,  requesing_user,module_id);
 
@@ -146,64 +182,7 @@ const userController = {
         }
     },
 
-    async handleUpload1(req, res, next) {
-        const userId = req.user.id; 
-       
-        const comboInput = req.body.combo_text;
-        const proxyInput = req.body.proxy_text;
-        const moduleId = req.body.module_id;
-        if (!moduleId) {
-            return next(new AppError('Module ID is required.', 400));
-        }
-
-        let finalComboInput = comboInput;
-        let finalProxyInput = proxyInput;
-
-        if (req.files && req.files.combo_file && req.files.combo_file[0]) {
-            // Multer stores temp file path
-            finalComboInput = await fs.readFile(req.files.combo_file[0].path, 'utf8');
-        }
-        if (req.files && req.files.proxy_file && req.files.proxy_file[0]) {
-            finalProxyInput = await fs.readFile(req.files.proxy_file[0].path, 'utf8');
-        }
-
-        // Cleanup temp files after reading
-        if (req.files && req.files.combo_file && req.files.combo_file[0]) {
-            await fs.unlink(req.files.combo_file[0].path).catch(e => console.error("Error deleting temp combo file:", e));
-        }
-        if (req.files && req.files.proxy_file && req.files.proxy_file[0]) {
-            await fs.unlink(req.files.proxy_file[0].path).catch(e => console.error("Error deleting temp proxy file:", e));
-        }
-
-
-        if (!finalComboInput || !finalProxyInput) {
-            return next(new AppError('Combos and proxies (textarea or file) are required.', 400));
-        }
-
-        const comboArray = parseInputToArray(finalComboInput);
-        const proxyArray = parseInputToArray(finalProxyInput);
-
-        if (comboArray.length === 0 || proxyArray.length === 0) {
-            return next(new AppError('Combos and proxies (textarea or file) are required and must contain valid entries.', 400));
-        }
-
-        try {
-            // Assuming processCombosAndProxies handles job creation and returns job ID or success status
-            const jobId = await userService.processCombosAndProxies(comboArray, proxyArray, userId, moduleId);
-
-            if (jobId) {
-                return res.status(200).json({
-                    status: 'success',
-                    message: `Job processing initiated for Job ID ${jobId}.`,
-                    job_id: jobId
-                });
-            } else {
-                return next(new AppError('Failed to initiate job processing.', 500));
-            }
-        } catch (error) {
-            return next(error); 
-        }
-    },
+    
 
   
     async processJob(req, res, next) {

@@ -7,7 +7,8 @@ const path          = require('path');
 const apiRoutes           = require('./routes');          // routes/index.js
 const globalErrorHandler  = require('./middleware/errorHandler');
 const AppError            = require('./utils/AppError');
-
+const User = require('./models/User1');
+const bcrypt = require('bcryptjs');
 // ──────────────────────────────────────────────────────────────
 // 1. Load environment variables
 // ──────────────────────────────────────────────────────────────
@@ -70,7 +71,27 @@ async function startServer() {
     await db.sequelize.authenticate();
     console.log('✅  Database connection established.');
     // During development you can keep alter:true
-    await db.sequelize.sync({ alter: true });
+    await db.sequelize.sync({ alter: true }).then(async () => {
+    console.log("Database synced");
+
+    // Check if admin already exists
+    const existingAdmin = await User.findOne({ where: { email: process.env.ADMIN_EMAIL } });
+    if (!existingAdmin) {
+      await User.create(
+        {
+          first_name: 'Jeeshan',
+          last_name: 'Gupta',
+          username: 'Jgupta',
+          email: process.env.ADMIN_EMAIL,
+          password: await bcrypt.hash('password', 10),// hash this!
+          role: 'ADMIN'
+        }
+      );
+      console.log("Initial users created");
+    }
+  })
+  .catch(console.error);
+
     console.log('✅  Models synchronised.');
   } catch (err) {
     console.error('❌  Unable to connect to the database:', err);

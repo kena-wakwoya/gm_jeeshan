@@ -5,7 +5,7 @@ const AppError = require('../utils/AppError');
 
 class AuthService {
   constructor() {
-    this.jwtSecret   = process.env.JWT_SECRET;
+    this.jwtSecret   = process.env.JWT_SECRET || 'myseck';
     this.jwtExpiresIn = process.env.JWT_EXPIRES_IN || '12h';
 
     if (!this.jwtSecret) {
